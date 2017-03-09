@@ -466,5 +466,6 @@
 				<meleeDamageDef>PJ_Saber</meleeDamageDef>
 			</li>
 		</verbs>
+		</ThingDef>	
 	
 </ThingDefs>
