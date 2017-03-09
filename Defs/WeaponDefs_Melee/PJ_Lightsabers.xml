@@ -149,6 +149,7 @@
 			<soundHitBuilding>PJ_LightsaberHit</soundHitBuilding>
 		  </li>
 		  <li Class="CompSlotLoadable.CompProperties_SlotLoadable">
+		    <compClass>ProjectJedi.CompCrystalSlotLoadable</compClass>
 		    <slots>
 				<li>PJ_KyberCrystalSlot</li>
 			</slots>
@@ -245,6 +246,7 @@
 			<soundHitBuilding>PJ_LightsaberHit</soundHitBuilding>
 		  </li>
 		  <li Class="CompSlotLoadable.CompProperties_SlotLoadable">
+		  <compClass>ProjectJedi.CompCrystalSlotLoadable</compClass>
 		    <slots>
 				<li>PJ_KyberCrystalSlot</li>
 			</slots>
@@ -339,6 +341,7 @@
 			<soundHitBuilding>PJ_KyloHit</soundHitBuilding>
 		  </li>
 		  <li Class="CompSlotLoadable.CompProperties_SlotLoadable">
+		  <compClass>ProjectJedi.CompCrystalSlotLoadable</compClass>
 		    <slots>
 				<li>PJ_KyberCrystalSlot</li>
 			</slots>
@@ -370,5 +373,98 @@
 		</verbs>
 	</ThingDef>
 	
+		<!-- ======== Darth Maul Double Saber ======== -->
+	
+		<ThingDef ParentName="PJ_BaseLightsaber">
+		<defName>PJ_Doublesaber</defName>
+		<label>Double lightsaber</label>
+		<description>An elegant weapon, from a more civilized age - or so it is claimed.</description>
+		<graphicData>
+			<texPath>Weapons/DoublesaberHilt</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+			<drawSize>2.3</drawSize>			
+			<onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>			
+		</graphicData>
+	    <tickerType>Normal</tickerType>
+		<soundInteract>InteractPistol</soundInteract>
+		<tradeability>Sellable</tradeability>
+		<costStuffCount>10</costStuffCount>
+		<statBases>
+			<MarketValue>3000</MarketValue>
+			<MaxHitPoints>80</MaxHitPoints>			
+			<WorkToMake>400</WorkToMake>
+			<Mass>1.8</Mass>
+			<MeleeWeapon_DamageAmount>26</MeleeWeapon_DamageAmount>
+			<DeteriorationRate>0.025</DeteriorationRate>
+			<MeleeWeapon_Cooldown>2.5</MeleeWeapon_Cooldown>
+		</statBases>
+		<equippedAngleOffset>-65</equippedAngleOffset>
+		<stuffCategories>
+			<li>Metallic</li>
+		</stuffCategories>
+		<!-- recipeMaker>
+			<recipeUsers>
+				<li>ElectricSmithy</li>
+				<li>FueledSmithy</li>
+				<li>CraftingSpot</li>
+			</recipeUsers>
+		</recipeMaker -->
+		<comps>
+		  <li>
+		    <compClass>CompOversizedWeapon.CompOversizedWeapon</compClass>
+		  </li>
+		  <li Class="CompActivatableEffect.CompProperties_ActivatableEffect">
+			<compClass>ProjectJedi.CompLightsaberActivatableEffect</compClass>
+			<altitudeLayer>MoteOverhead</altitudeLayer>
+			<ActivateLabel>Activate</ActivateLabel>
+			<uiIconPathActivate>UI/Lightsaber/ActivateSaber</uiIconPathActivate>
+			<DeactivateLabel>Deactivate</DeactivateLabel>
+			<uiIconPathDeactivate>UI/Lightsaber/DeactivateSaber</uiIconPathDeactivate>
+			<activateSound>PJ_LightsaberActivate</activateSound>
+			<deactivateSound>PJ_LightsaberDeactivate</deactivateSound>
+			<gizmosOnEquip>true</gizmosOnEquip>
+			<graphicData>
+				<texPath>Weapons/DoublesaberBlade</texPath>
+				<graphicClass>Graphic_Single</graphicClass>
+				<shaderType>CutoutComplex</shaderType>		
+			</graphicData>			
+		  </li>
+		  <li Class="CompExtraSounds.CompProperties_ExtraSounds">
+			<compClass>CompExtraSounds.CompExtraSounds</compClass>
+			<soundMiss>PJ_LightsaberSwing</soundMiss>
+			<soundHitPawn>PJ_LightsaberFleshHit</soundHitPawn>
+			<soundHitBuilding>PJ_LightsaberHit</soundHitBuilding>
+		  </li>
+		  <li Class="CompSlotLoadable.CompProperties_SlotLoadable">
+		    <slots>
+				<li>PJ_KyberCrystalSlot</li>
+			</slots>
+		  </li>
+		  <li Class="CompDeflector.CompProperties_Deflector">
+		    <compClass>CompDeflector.CompDeflector</compClass>
+			<baseDeflectChance>0.99</baseDeflectChance>
+			<useManipulationInCalc>true</useManipulationInCalc>
+			<useSkillInCalc>true</useSkillInCalc>
+			<deflectSound>PJ_LightsaberDeflect</deflectSound>
+			<deflectSkill>Melee</deflectSkill>
+			<deflectRatePerSkillPoint>0.018</deflectRatePerSkillPoint>
+			<DeflectVerb Class="VerbProperties">
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<projectileDef>PJ_BulletDeflected</projectileDef>
+				<warmupTime>0</warmupTime>
+				<range>24</range>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</DeflectVerb>			
+		  </li>
+		</comps>
+		<verbs>
+			<li>
+				<verbClass>Verb_MeleeAttack</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<meleeDamageDef>PJ_Saber</meleeDamageDef>
+			</li>
+		</verbs>
 	
 </ThingDefs>

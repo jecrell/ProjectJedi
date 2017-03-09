@@ -57,7 +57,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\CompOversizedWeapon\Assemblies\CompOversizedWeapon.dll</HintPath>
     </Reference>
-    <Reference Include="CompSlotLoadable, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="CompSlotLoadable, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\CompSlotLoadable\Assemblies\CompSlotLoadable.dll</HintPath>
     </Reference>
@@ -75,12 +75,15 @@
   <ItemGroup>
     <Compile Include="ProjectJedi\CompForceUser.cs" />
     <Compile Include="ProjectJedi\CompLightsaberActivatableEffect.cs" />
+    <Compile Include="ProjectJedi\CrystalSlotLoadable.cs" />
     <Compile Include="ProjectJedi\DamageWorker_ForceHeal.cs" />
     <Compile Include="ProjectJedi\ForceAbilityDef.cs" />
     <Compile Include="ProjectJedi\ForceAlignmentType.cs" />
     <Compile Include="ProjectJedi\Need_ForcePool.cs" />
     <Compile Include="ProjectJedi\ModInitializer.cs" />
-    <Compile Include="ProjectJedi\ProjectJediDefOf.cs" />
+    <Compile Include="ProjectJedi\ProjectJediDefOf.cs">
+      <DependentUpon>Need_ForcePool.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
